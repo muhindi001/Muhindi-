@@ -198,3 +198,5 @@ def forgot_password(request):
 
 def login_view(request):
     return render(request, 'tourism/login.html')
+
+# start up
