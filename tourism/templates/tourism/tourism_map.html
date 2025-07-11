@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourism Map of Tanzania</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmRBt7dQotTsWo7yDjHK1okKxru3mHllU&callback=initMap" async defer></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        #map {
+            height: 500px;
+            width: 100%;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tourism Map of Tanzania</h1>
+    <div id="map"></div>
+    <script src="{% static 'js/tourism_map.js' %}"></script>
+</body>
+</html>

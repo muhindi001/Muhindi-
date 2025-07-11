@@ -1,0 +1,59 @@
+{% extends "tourism/base.html" %}
+{% load static %}
+
+{% block title %}About Us{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center">About Us</h1>
+    <p class="text-center">Learn more about Tanzania's beautiful tourism destinations.</p>
+    
+    <div class="row mt-5">
+        <!-- Card 1 -->
+        <div class="col-md-12 mb-4 d-flex align-items-center">
+            <div class="circle-image">
+                <img src="{% static 'images/animal.jpg' %}" class="img-fluid rounded-circle" alt="About Tourism">
+            </div>
+            <div class="ms-4">
+                <h2>Explore Tanzania</h2>
+                <p>
+                    Tanzania is home to breathtaking landscapes, from the Serengeti plains to Mount Kilimanjaro.
+                    Explore wildlife safaris, stunning beaches, and rich cultural heritage. Our mission is to
+                    promote sustainable tourism while preserving nature's beauty.
+                </p>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-md-12 mb-4 d-flex align-items-center">
+            <div class="circle-image">
+                <img src="{% static 'images/landscape.jpg' %}" class="img-fluid rounded-circle" alt="Tanzania Landscape">
+            </div>
+            <div class="ms-4">
+                <h2>Rich Culture</h2>
+                <p>
+                    Discover the vibrant culture of Tanzania, from traditional dances to local cuisines. Experience
+                    the warmth and hospitality of the Tanzanian people.
+                </p>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-md-12 mb-4 d-flex align-items-center">
+            <div class="circle-image">
+                <img src="{% static 'images/trekking.jpg' %}" class="img-fluid rounded-circle" alt="Trekking in Tanzania">
+            </div>
+            <div class="ms-4">
+                <h2>Adventure Awaits</h2>
+                <p>
+                    Embark on thrilling adventures, from trekking Mount Kilimanjaro to diving in the crystal-clear
+                    waters of Zanzibar. Tanzania offers unforgettable experiences for every traveler.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+

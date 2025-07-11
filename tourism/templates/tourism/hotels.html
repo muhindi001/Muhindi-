@@ -1,0 +1,39 @@
+
+{% extends "tourism/base.html" %}
+
+{% load static %}
+
+{% block title %}Hotels in Tanzania{% endblock %}
+
+{% block content %}
+    <h1>Hotels in Tanzania</h1>
+    <div class="hotel"><h1>Selena Hotel</h1></div>
+    <div class="hotels-container">
+        
+        {% for hotel in hotels %}
+            <div class="hotel-card">
+                <img src="{% static 'images/landscape.jpg' %}" alt="{{ hotel.name }} Image" class="hotel-image">
+                <div class="hotel-details">
+                    <h2>{{ hotel.name }}</h2>
+                    <p><strong>Location:</strong> {{ hotel.location }}</p>
+                    <p><strong>Rating:</strong> {{ hotel.rating }} ⭐</p>
+                    <p>{{ hotel.description }}</p>
+                    <!-- <p><strong>Amenities:</strong> {{ hotel.amenities }}</p> -->
+                    <p><strong>Price:</strong> ${{ hotel.price_per_night }} per night</p>
+                    <p><strong>Reviews:</strong> {{ hotel.reviews_count }} reviews ({{ hotel.average_rating }}/5)</p>
+                    <p><strong>Distance to City Center:</strong> {{ hotel.distance_to_city_center }} 10km</p>
+                    <p><strong>Availability:</strong> {% if hotel.is_available %}Available{% else %}Fully Booked{% endif %}</p>
+                    {% if hotel.special_offer %}
+                        <p class="special-offer">Special Offer: {{ hotel.special_offer }}</p>
+                    {% endif %}
+                    <a href="https://maps.google.com/?q={{ hotel.location }}" target="_blank" class="btn btn-secondary">View on Map</a>
+                    <!-- Add a Book Now button -->
+                    <a href="{% url 'book_hotel' hotel.id %}" class="btn btn-primary mt-2">Book Now</a>
+                </div>
+            </div>
+        {% empty %}
+            <p>No hotels available.</p>
+        {% endfor %}
+    </div>
+{% endblock %}
+

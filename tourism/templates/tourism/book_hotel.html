@@ -1,0 +1,12 @@
+{% extends "tourism/base.html" %}
+
+{% block title %}Book {{ hotel.name }}{% endblock %}
+
+{% block content %}
+    <h1>Book {{ hotel.name }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Book Now</button>
+    </form>
+{% endblock %}

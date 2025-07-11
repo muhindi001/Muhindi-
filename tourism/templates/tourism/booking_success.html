@@ -1,0 +1,9 @@
+{% extends "tourism/base.html" %}
+
+{% block title %}Booking Successful{% endblock %}
+
+{% block content %}
+    <h1>Booking Confirmed!</h1>
+    <p>Your hotel booking has been successfully placed.</p>
+    <a href="{% url '/tourism' %}">Back to Home</a>
+{% endblock %}
